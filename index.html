@@ -4,14 +4,18 @@
     quantidadeVezesPassouMedico
     let quantidadeMedicamentoEstoque, quantidadeMedicamentoPaciente
     let itemMenu
+    let nomesPacientes = []
 
-    itemMenu = prompt("o que voce gostaria de acessar? 1- Cadastro, 2- Controle de estoque")
+    itemMenu = prompt("o que voce gostaria de acessar? 1- Cadastro, 2- Controle de estoque, 0- Saindo")
 
+    while(itemMenu != 0) {
     if(itemMenu == 1) {
         nomePaciente = prompt("Qual o nome do paciente?")
         idadePaciente = prompt("Qual a idade do paciente?")
         quantidadeVezesPassouMedico = prompt("Quantas vezes foi ao medico?")
     
+        nomesPacientes.push(nomePaciente)
+
 
     if (quantidadeVezesPassouMedico > 5 ) {
         console.log("Esse paciente é um caso urgente!") }
@@ -25,6 +29,7 @@
     console.log("Nome do paciente cadastrado:" + nomePaciente)
     console.log("Idade dopaciente cadastrado:" + idadePaciente)
     console.log("Quantas vezes ele foi ao médico?" + quantidadeVezesPassouMedico)
+    console.log("Nomes dos pacientes" + nomesPacientes) 
     } else if (itemMenu == 2) {
         quantidadeMedicamentoEstoque = prompt("Quanto medicamento possue ?")
 
@@ -33,10 +38,11 @@
         quantidadeMedicamentoEstoque = quantidadeMedicamentoEstoque - quantidadeMedicamentoPaciente
         console.log("Quantidade de medicamentos restantes:" + quantidadeMedicamentoEstoque)
     }
+
     if (quantidadeMedicamentoEstoque <= 0 ) {
         console.log("O estoque acabou!")
     }
-    
+    itemMenu = prompt("o que voce gostaria de acessar? 1- Cadastro, 2- Controle de estoque, 0- Saindo")
 }
-   
+   }
 </script>
